@@ -1,0 +1,230 @@
+#mainPage {
+    -fx-background-color: blue;
+}
+
+#gamePage {
+    //-fx-background-color: green;
+    -fx-background-image: url("Pictures/Grass.png");
+}
+
+.tile {
+    -fx-background-size: 100%;
+}
+
+.tile#wall{
+    -fx-background-image: url("Pictures/Fal.png");
+}
+
+.tile#dwall
+{
+    -fx-background-image: url("Pictures/TorFalIlleszt.png");
+}
+
+#player1
+{
+    -fx-background-image: url("Pictures/Player1.png");
+    -fx-background-size: 80%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+#player2
+{
+    -fx-background-image: url("Pictures/Player2.png");
+    -fx-background-size: 80%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.menuButton {
+    -fx-background-size: 100%;
+}
+
+#gameName{
+    -fx-background-image: url("Pictures/BombermanName.png");
+    -fx-background-size: 100%;
+}
+
+.menuButton#start {
+    -fx-background-image: url("Pictures/Start.png");
+}
+
+.menuButton#scoreboard {
+    -fx-background-image: url("Pictures/ScoreBoard.png");
+    -fx-background-size: 110%;
+    -fx-background-position: center;
+}
+
+.menuButton#settings {
+    -fx-background-image: url("Pictures/Settings.png");
+}
+
+.menuButton#credits {
+    -fx-background-image: url("Pictures/Credits.png");
+}
+
+.menuButton#exit {
+    -fx-background-image: url("Pictures/Exit.png");
+}
+
+.menuButton#mainMenu {
+    -fx-background-image: url("Pictures/MainMenu.png");
+}
+
+.cursor {
+    -fx-background-size: 100%;
+}
+
+.cursor#left{
+    -fx-background-image: url("Pictures/cursor.gif");
+}
+
+.cursor#right{
+    -fx-background-image: url("Pictures/cursor.gif");
+    -fx-rotate: 180;
+}
+
+#scoreboardtitle {
+    -fx-background-image: url("Pictures/ScoreBoard.png");
+    -fx-background-size: 100%;
+    -fx-background-position: center;
+}
+
+#scoreText {
+    -fx-font-size: 20;
+    -fx-alignment: center;
+}
+
+#bomb {
+    -fx-background-size: 90%;
+    -fx-background-image: url("Pictures/Bomb1.3.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+#pause {
+    -fx-background-color: grey;
+    -fx-opacity: 50%;
+}
+
+#pausetext {
+    -fx-background-image: url("Pictures/PauseText.png");
+}
+
+#pressPText{
+    -fx-background-image: url("Pictures/PressP.png");
+    -fx-background-size: 100%;
+}
+
+#explMid{
+    -fx-background-image: url("Pictures/Kozepso.png");
+    -fx-background-size: 100%;
+}
+
+#explLine{
+    -fx-background-image: url("Pictures/Toldas.png");
+    -fx-background-size: 100%;
+}
+
+#explEnd{
+    -fx-background-image: url("Pictures/Szel.png");
+    -fx-background-size: 100%;
+}
+
+#explLine2{
+    -fx-background-image: url("Pictures/Toldas.png");
+    -fx-background-size: 100%;
+}
+
+#explEnd2{
+    -fx-background-image: url("Pictures/Szel.png");
+    -fx-background-size: 100%;
+    -fx-rotate: 180;
+}
+
+#explLine3{
+    -fx-background-image: url("Pictures/Toldas.png");
+    -fx-background-size: 100%;
+    -fx-rotate: 90;
+}
+
+#explEnd3{
+    -fx-background-image: url("Pictures/Szel.png");
+    -fx-background-size: 100%;
+    -fx-rotate: 90;
+}
+
+#explLine4{
+    -fx-background-image: url("Pictures/Toldas.png");
+    -fx-background-size: 100%;
+    -fx-rotate: 270;
+}
+
+#explEnd4{
+    -fx-background-image: url("Pictures/Szel.png");
+    -fx-background-size: 100%;
+    -fx-rotate: 270;
+}
+
+#destroyedWall{
+    -fx-background-image: url("Pictures/explodedwall.png");
+    -fx-background-size: 100%;
+}
+
+#endPage{
+    -fx-background-color: green;
+}
+
+.result#one {
+    -fx-background-image: url("Pictures/Player1Win.png");
+    -fx-background-size: 100%;
+}
+
+.result#two {
+    -fx-background-image: url("Pictures/Player2Win.png");
+    -fx-background-size: 100%;
+}
+
+.result#draw {
+    -fx-background-image: url("Pictures/Draw.png");
+    -fx-background-size: 100%;
+}
+
+#text {
+    -fx-background-color: white;
+    -fx-font-size: 20;
+}
+
+#score {
+    -fx-background-color: snow;
+}
+
+#powerUp_Speed {
+    -fx-background-image: url("Pictures/POWERUP_Speed.png");
+    -fx-background-size: 100%;
+}
+
+#powerUp_Bomb {
+    -fx-background-image: url("Pictures/POWERUP_Bomb.png");
+    -fx-background-size: 100%;
+}
+
+#powerUp_FirePower {
+    -fx-background-image: url("Pictures/POWERUP_FirePower.png");
+    -fx-background-size: 100%;
+}
+
+#powerUp_Speed_Destroyed {
+    -fx-background-image: url("Pictures/POWERUP_Speed_Destroyed.png");
+    -fx-background-size: 100%;
+}
+
+#powerUp_Bomb_Destroyed {
+    -fx-background-image: url("Pictures/POWERUP_Bomb_Destroyed.png");
+    -fx-background-size: 100%;
+}
+
+#powerUp_FirePower_Destroyed {
+    -fx-background-image: url("Pictures/POWERUP_FirePower_Destroyed.png");
+    -fx-background-size: 100%;
+}

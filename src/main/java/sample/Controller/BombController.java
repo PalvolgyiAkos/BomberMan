@@ -7,11 +7,25 @@ import sample.View.GamePage.Explosion;
 import sample.View.GameScene;
 import java.util.ArrayList;
 
+/**
+ * This is the class which manages the bombs.
+ */
 public class BombController
 {
+    /**
+     * This is an ArrayList which contains the bombs.
+     */
     private ArrayList<Bomb> bomb;
+    /**
+     * This is an ArrayList which contains the explosions.
+     */
     private ArrayList<Explosion> explosions;
 
+    /**
+     * This is the constructor which controlling the bombs.
+     *
+     * @param gameScene is the chosen {@code GameScene}.
+     */
     public BombController(GameScene gameScene)
     {
         this.bomb = gameScene.getGamePage().getBombs();
@@ -19,6 +33,11 @@ public class BombController
 
         new AnimationTimer()
         {
+            /**
+             * This is the method which controlling the bombs on the GamePage.
+             *
+             * @param now is the chosen {@code long}.
+             */
             @Override
             public void handle(long now)
             {

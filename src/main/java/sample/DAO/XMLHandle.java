@@ -18,9 +18,23 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * This is the class which reads and creates the xml file.
+ */
 public class XMLHandle
 {
+    /**
+     * This is a list which will contain the database's rows.
+     */
     private ArrayList<ScoreData> scoreDataList = new ArrayList<>();
+
+    /**
+     * This is a method which reads the xml and fills up the scoreDataList.
+     *
+     * @throws ParserConfigurationException could be thrown.
+     * @throws SAXException could be thrown.
+     * @throws IOException could be thrown.
+     */
     public void read() throws ParserConfigurationException, SAXException, IOException
     {
         File input = new File("src\\main\\resources\\sample\\DB\\Scores.xml");
@@ -68,6 +82,16 @@ public class XMLHandle
         }
     }
 
+    /**
+     * This is a method which creates or opens to append the xml.
+     *
+     * @param player1 is Player1's name ({@code String}).
+     * @param player1_score is Player1's score ({@code int}).
+     * @param player2 is Player2's name ({@code String}).
+     * @param player2_score is Player2's score ({@code int}).
+     * @param time is the game's played time.
+     * @param result1 is the game's result.
+     */
     public void create(String player1, int player1_score, String player2, int player2_score, String time, String result1)
     {
         File input = new File("src\\main\\resources\\sample\\DB\\Scores.xml");
@@ -136,6 +160,11 @@ public class XMLHandle
         }
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the xml's rows in a list.
+     */
     public ArrayList<ScoreData> getScoreDataList() {
         return scoreDataList;
     }

@@ -11,8 +11,22 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+/**
+ * This is a class which generates a new {@code ScoreData} and push it to the XML DB.
+ */
 public class Appender
 {
+    /**
+     * This is the constructor of the {@code Appender} class.
+     *
+     * @param player1 is Player1's name ({@code String}).
+     * @param player1_score is Player1's score ({@code int}).
+     * @param player2 is Player2's name ({@code String}).
+     * @param player2_score is Player2's score ({@code int}).
+     * @param time is the game's played time ({@code String}).
+     * @param result1 is the game's result ({@code String}).
+     * @throws Exception that could be thrown bz the xml open.
+     */
     public void appender(String player1, int player1_score, String player2, int player2_score, String time, String result1) throws Exception
     {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();

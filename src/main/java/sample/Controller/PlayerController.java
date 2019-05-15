@@ -6,16 +6,46 @@ import sample.Status;
 import sample.View.GameScene;
 import sample.View.GamePage.Player;
 
+/**
+ * This is the class which manages the players' interactions.
+ */
 public class PlayerController
 {
+    /**
+     * This object manages the DB ({@code XMLHandle}).
+     */
     private XMLHandle xmlHandle=new XMLHandle();
+    /**
+     * This is the delayed time after one player's death. To make teh draw result possible.
+     */
     private int afterDeathTime = 90;
+    /**
+     * This indicates that how many player is dead.
+     *      - 0: all alive.
+     *      - 1: Player1 is dead.
+     *      - 2: Player2 is dead.
+     *      - 3: All players are dead.
+     */
     private int someoneIsDead = 0;
-    private int entered = 60;
+    /**
+     * This indicates that how long is the ENTER kez disabled.
+     */
+    private int entered = 20;
+
+    /**
+     * This is the constructor of the {@code PlayerController} class.
+     *
+     * @param gameScene is the needed {@code GameScene}.
+     */
     public PlayerController(GameScene gameScene)
     {
         new AnimationTimer()
         {
+            /**
+             * This is the method which handles the players' interactions.
+             *
+             * @param now is the time parameter in "tick" (60 tick = 1 sec).
+             */
             @Override
             public void handle(long now)
             {

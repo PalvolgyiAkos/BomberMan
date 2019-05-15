@@ -10,13 +10,33 @@ import sample.View.Menu.MainPage;
 
 import java.util.logging.Logger;
 
+/**
+ * This is the class which manages the whole GameScene.
+ */
 public class GameSceneController
 {
+    /**
+     * This is a {@code boolean} which decide to pause the game.
+     */
     private boolean ifPaused;
+    /**
+     * This is an object ({@code Player}) for player1.
+     */
     private Player player1;
+    /**
+     * This is an object ({@code Player}) for player2.
+     */
     private Player player2;
+    /**
+     * This is the logger of the GameSceneController.
+     */
     Logger logger=Logger.getLogger("GameSceneController");
 
+    /**
+     * This is the constructor which managing the key actions.
+     *
+     * @param gameScene is the chosen {@code GameScene}
+     */
     public GameSceneController(GameScene gameScene)
     {
         MainPage mainPage = gameScene.getMainPage();
@@ -26,6 +46,11 @@ public class GameSceneController
 
         gameScene.getScene().setOnKeyPressed(new EventHandler<KeyEvent>()
         {
+            /**
+             * This is the method which manages the keypress actions.
+             *
+             * @param event is the chosen {@code KeyEvent}.
+             */
             @Override
             public void handle(KeyEvent event)
             {
@@ -221,6 +246,11 @@ public class GameSceneController
 
         gameScene.getScene().setOnKeyReleased(new EventHandler<KeyEvent>()
         {
+            /**
+             * This is the method which manages the key release actions.
+             *
+             * @param event is the chosen {@code KeyEvent}.
+             */
             @Override
             public void handle(KeyEvent event)
             {

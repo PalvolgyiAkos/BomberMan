@@ -3,20 +3,62 @@ package sample.Model;
 import sample.View.GamePage.GamePage;
 import sample.View.GamePage.Tile;
 
+/**
+ * This is a class which contains the player's details.
+ */
 public class PlayerModel
 {
+    /**
+     * This is the player's name.
+     */
     private String name;
+    /**
+     * This is the player's width on the screen.
+     */
     private double width=50;
+    /**
+     * This is the player's height on the screen.
+     */
     private double height=50;
+    /**
+     * This is the X position of the player.
+     */
     private double positionX;
+    /**
+     * This is the Y position of the player.
+     */
     private double positionY;
+    /**
+     * This is the movement speed of the player.
+     */
     private double movementSpeed=2;
+    /**
+     * This is a counter that indicates the placeable by the player.
+     */
     private int availableBombs = 1;
+    /**
+     * This is the power of the bombs placed by the player.
+     */
     private int bombPower = 2;
+    /**
+     * This array contains the given move directions in order.
+     */
     private int[] moveDirection = new int[5];
+    /**
+     * This array contains the position of the recently placed bomb ((-1, -1) if no bomb placed).
+     */
     private int[] placedBomb = new int[2];
+    /**
+     * This is the player's score.
+     */
     private int score = 0;
 
+    /**
+     * This is the constructor of the {@code PlayerModel} class.
+     *
+     * @param positionX is the player's starter X position.
+     * @param positionY is the player's starter Y position.
+     */
     public PlayerModel(double positionX, double positionY)
     {
         this.positionX = positionX;
@@ -26,6 +68,11 @@ public class PlayerModel
         this.placedBomb[1] = -1;
     }
 
+    /**
+     * This method moves the player on the scene.
+     *
+     * @param gamePage is the page where the player is located.
+     */
     public void move(GamePage gamePage)
     {
         int first = 0;
@@ -115,7 +162,13 @@ public class PlayerModel
         }
     }
 
-    private void refreshPlacedBomb(int posY, int posX)
+    /**
+     * This is a method is refreshes the recently {@code int[] placedBomb} values.
+     *
+     * @param posY is the players current position in the game field array.
+     * @param posX is the players current position in the game field array.
+     */
+    public void refreshPlacedBomb(int posY, int posX)
     {
         if ((posY != placedBomb[0]) || (posX != placedBomb[1]))
         {
@@ -124,11 +177,23 @@ public class PlayerModel
         }
     }
 
-    private boolean onPlacedBomb()
+    /**
+     * This is a function which says if the player is on a recently placed bomb or not.
+     *
+     * @return true if on a placed bomb, false if not.
+     */
+    public boolean onPlacedBomb()
     {
         return (positionX - (placedBomb[1] * 50 + 30) < 40) && (positionY - (placedBomb[0] * 50 + 40) < 40);
     }
 
+    /**
+     * This method will manages what will happen if a player is on a tile which contains a power up.
+     *
+     * @param tiles is an array of a current state of the game field.
+     * @param posX is the players X position on the game field array.
+     * @param posY is the players Y position on the game field array.
+     */
     private void checkPowerUp(Tile[][] tiles, int posX, int posY)
     {
         switch (tiles[posY][posX].getPane().getId())
@@ -151,94 +216,197 @@ public class PlayerModel
         }
     }
 
-    private void speedUp()
+    /**
+     * This is a method which increases the player's speed.
+     */
+    public void speedUp()
     {
         this.movementSpeed+=0.5;
     }
 
-    private void powerUp()
+    /**
+     * This is a method which increases the bomb's power placed by this player.
+     */
+    public void powerUp()
     {
         this.bombPower++;
     }
 
-    private void addBomb()
+    /**
+     * This is a method which increases the placeable bombs' number for the player.
+     */
+    public void addBomb()
     {
         this.availableBombs++;
     }
 
+    /**
+     * This method will increase the score of the player.
+     *
+     * @param score is the chosen {@code int}.
+     */
     public void incScore(int score)
     {
         this.score += score;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the player's score.
+     */
     public int getScore()
     {
         return score;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the number of placeable bombs by the player.
+     */
     public int getAvailableBombs()
     {
         return availableBombs;
     }
 
+    /**
+     * This is a setter method of the number of the placeable bombs by the player.
+     *
+     * @param availableBombs is the chosen {@code int}
+     */
     public void setAvailableBombs(int availableBombs)
     {
         this.availableBombs = availableBombs;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the power of the bomb placeable by the player.
+     */
     public int getBombPower()
     {
         return bombPower;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the player's name.
+     */
     public String getName()
     {
         return name;
     }
 
+    /**
+     * This is a setter method of the player's name.
+     *
+     * @param name is the chosen {@code String}
+     */
     public void setName(String name)
     {
         this.name = name;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the player's width.
+     */
     public double getWidth()
     {
         return width;
     }
 
+    /**
+     * This is a setter method of player's width.
+     *
+     * @param width is the chosen {@code double}
+     */
     public void setWidth(double width)
     {
         this.width = width;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the player's height.
+     */
     public double getHeight()
     {
         return height;
     }
 
+    /**
+     * This is a setter method of player's height.
+     *
+     * @param height is the chosen {@code double}
+     */
     public void setHeight(double height)
     {
         this.height = height;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the player's X position.
+     */
     public double getPositionX()
     {
         return positionX;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the player's Y position.
+     */
     public double getPositionY()
     {
         return positionY;
     }
 
+    /**
+     * This is a getter function.
+     *
+     * @return the player's movement direction in {@code int[]}.
+     */
     public int[] getMoveDirection()
     {
         return moveDirection;
     }
 
+    /**
+     * This is a setter method of position of the bomb placed recently by the player.
+     *
+     * @param positionX is the chosen {@code int}
+     * @param positionY is the chosen {@code int}
+     */
     public void setPlacedBomb(int positionY, int positionX)
     {
         this.placedBomb[0] = positionY;
         this.placedBomb[1] = positionX;
+    }
+
+    /**
+     * This is a getter function.
+     *
+     * @return the position of the recently placed bomb by the player.
+     */
+    public int[] getPlacedBomb() {
+        return placedBomb;
+    }
+
+    /**
+     * This is a getter function.
+     *
+     * @return the player's movement speed.
+     */
+    public double getMovementSpeed() {
+        return movementSpeed;
     }
 }

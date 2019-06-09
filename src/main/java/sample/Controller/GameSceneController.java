@@ -155,7 +155,7 @@ public class GameSceneController
                         player1.getPlayerModel().getMoveDirection()[4] =
                                 player1.getPlayerModel().getMoveDirection()[0] + 1;
                         player1.getPlayerModel().getMoveDirection()[0]++;
-                    } else if (event.getCode() == KeyCode.ALT_GRAPH && player1.getPlayerModel().getAvailableBombs() > 0)
+                    } else if (event.getCode() == KeyCode.L && player1.getPlayerModel().getAvailableBombs() > 0)
                     {
                         int posX = (int)(player1.getPlayerModel().getPositionX() - 30 + 25) / 50;
                         int posY = (int)(player1.getPlayerModel().getPositionY() - 40 + 25) / 50;
